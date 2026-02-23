@@ -8,6 +8,7 @@ No uploads from camera roll or files are allowed.
 
 ## Recommended stack (2–3 week MVP + future scale)
 - **Client:** React Native with Expo
+- **Client:** React Native with Expo (TypeScript)
   - Fastest debug loop for local phone testing.
   - Single codebase for iOS + Android.
   - Path to custom native modules later (Expo prebuild / config plugins).
@@ -30,6 +31,7 @@ No uploads from camera roll or files are allowed.
 │   └── ENGINEERING_PLAN.md
 ├── packages/
 │   └── core/                   # Shared domain logic + tests (dependency-light Node tests)
+│   └── core/                   # Shared domain logic + tests
 ├── .github/
 │   ├── workflows/ci.yml
 │   ├── pull_request_template.md
@@ -39,6 +41,8 @@ No uploads from camera roll or files are allowed.
 │   └── CODEOWNERS
 ├── package.json
 └── .github/workflows/ci.yml
+├── tsconfig.base.json
+└── .eslintrc.cjs
 ```
 
 ## Getting started
@@ -73,6 +77,9 @@ Then scan the QR code in Expo Go.
 - For You ranking engine (MVP heuristic) with tests runnable via Node's built-in test runner
 - Moderation service contracts (report/block)
 - CI for lint + tests (core package path)
+- For You ranking engine (MVP heuristic) with tests
+- Moderation service contracts (report/block)
+- CI for lint + tests
 
 ## Local environment
 Create `.env` files from examples:
@@ -85,6 +92,7 @@ Key vars:
 ## How to test core ranking logic
 ```bash
 npm run test
+npm run test --workspace @realeyez/core
 ```
 
 ## Next implementation priorities
