@@ -6,6 +6,9 @@
     "packages/*"
   ],
   "scripts": {
+    "lint": "node --check packages/core/src/feedRanker.js && node --check packages/core/src/provenance.js && node --check packages/core/tests/feedRanker.test.js && node --check packages/core/tests/provenance.test.js",
+    "test": "node --test packages/core/tests/*.test.js",
+    "mobile": "npm run start --workspace @realeyez/mobile"
     "lint": "eslint . --ext .ts,.tsx",
     "test": "vitest run",
     "mobile": "npm run start --workspace @realeyez/mobile"

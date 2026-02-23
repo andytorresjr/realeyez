@@ -7,6 +7,7 @@ Realeyez is a social media app focused on authenticity and creativity.
 No uploads from camera roll or files are allowed.
 
 ## Recommended stack (2–3 week MVP + future scale)
+- **Client:** React Native with Expo
 - **Client:** React Native with Expo (TypeScript)
   - Fastest debug loop for local phone testing.
   - Single codebase for iOS + Android.
@@ -29,6 +30,7 @@ No uploads from camera roll or files are allowed.
 │   ├── SECURITY.md
 │   └── ENGINEERING_PLAN.md
 ├── packages/
+│   └── core/                   # Shared domain logic + tests (dependency-light Node tests)
 │   └── core/                   # Shared domain logic + tests
 ├── .github/
 │   ├── workflows/ci.yml
@@ -38,6 +40,7 @@ No uploads from camera roll or files are allowed.
 │   │   └── feature_request.yml
 │   └── CODEOWNERS
 ├── package.json
+└── .github/workflows/ci.yml
 ├── tsconfig.base.json
 └── .eslintrc.cjs
 ```
@@ -51,6 +54,7 @@ No uploads from camera roll or files are allowed.
 
 ### Install
 ```bash
+# Optional for mobile app dependencies (Expo)
 npm install
 ```
 
@@ -70,6 +74,9 @@ Then scan the QR code in Expo Go.
 - Auth shell (email + phone UX placeholders tied to Supabase service abstraction)
 - Profile model scaffold
 - Capture-only pipeline interfaces
+- For You ranking engine (MVP heuristic) with tests runnable via Node's built-in test runner
+- Moderation service contracts (report/block)
+- CI for lint + tests (core package path)
 - For You ranking engine (MVP heuristic) with tests
 - Moderation service contracts (report/block)
 - CI for lint + tests
@@ -84,6 +91,7 @@ Key vars:
 
 ## How to test core ranking logic
 ```bash
+npm run test
 npm run test --workspace @realeyez/core
 ```
 
@@ -91,3 +99,4 @@ npm run test --workspace @realeyez/core
 See:
 - `docs/ROADMAP.md`
 - `docs/ENGINEERING_PLAN.md`
+- `docs/NEXT_STEPS.md`
