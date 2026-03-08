@@ -6,6 +6,7 @@
     "version": "0.1.0",
     "orientation": "portrait",
     "plugins": [
+      "expo-dev-client",
       [
         "react-native-vision-camera",
         {
@@ -16,12 +17,14 @@
       ]
     ],
     "ios": {
+      "bundleIdentifier": "com.realeyez.app",
       "infoPlist": {
         "NSCameraUsageDescription": "Realeyez needs camera access to record videos.",
         "NSMicrophoneUsageDescription": "Realeyez needs microphone access to record audio."
       }
     },
     "android": {
+      "package": "com.realeyez.app",
       "permissions": [
         "android.permission.CAMERA",
         "android.permission.RECORD_AUDIO"
