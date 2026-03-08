@@ -4,6 +4,28 @@
     "slug": "realeyez",
     "scheme": "realeyez",
     "version": "0.1.0",
-    "orientation": "portrait"
+    "orientation": "portrait",
+    "plugins": [
+      [
+        "react-native-vision-camera",
+        {
+          "cameraPermissionText": "Realeyez needs camera access to record videos.",
+          "microphonePermissionText": "Realeyez needs microphone access to record audio.",
+          "enableMicrophonePermission": true
+        }
+      ]
+    ],
+    "ios": {
+      "infoPlist": {
+        "NSCameraUsageDescription": "Realeyez needs camera access to record videos.",
+        "NSMicrophoneUsageDescription": "Realeyez needs microphone access to record audio."
+      }
+    },
+    "android": {
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ]
+    }
   }
 }
